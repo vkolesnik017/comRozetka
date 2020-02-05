@@ -23,6 +23,7 @@ public class MobileCatalogPage {
         catalogOfProducts.shouldBe(visible);
         System.out.println("Select TOP-product from listings");
         for (int i = 0; i < countOfPages; i++) {
+            System.out.println("Cheking - " +(i+1) +" page of listing");
             if (i == 0) {
                 addProductsToMap(mobilePhones, titleOfProductss, priceOfProducts);
             }
@@ -31,7 +32,7 @@ public class MobileCatalogPage {
         }
     }
 
-    public SortingPricePage writeToFile(String pathToFile) {
+    public ListingPage writeToFile(String pathToFile) {
         System.out.println("Writing TOP-product into 'result.txt' file ");
         File myFile = new File(pathToFile);
         try {
@@ -42,12 +43,14 @@ public class MobileCatalogPage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return page(SortingPricePage.class);
+        return page(ListingPage.class);
     }
 
     public void addProductsToMap(Map<String, String> titleOfMap, ElementsCollection titleOfelement, ElementsCollection priceOfProduct) {
-        for (int j = 0; j < titleOfelement.size(); j++) {
-            titleOfMap.put(titleOfelement.get(j).getText(), priceOfProduct.get(j).getText());
+        if (titleOfelement.size()>0) {
+            for (int j = 0; j < titleOfelement.size(); j++) {
+                titleOfMap.put(titleOfelement.get(j).getText(), priceOfProduct.get(j).getText());
+            }
         }
     }
 }
