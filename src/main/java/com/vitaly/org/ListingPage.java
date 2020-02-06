@@ -13,25 +13,23 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ListingPage {
-private SelenideElement listOfProducts = $(byXpath("//ul[@class='catalog-grid']"));
-private ElementsCollection prices = $$(byXpath("//span[@class='goods-tile__price-value']"));
-
-    List<Integer> listBeforeSorting = new ArrayList<>();
+    private SelenideElement listOfProducts = $(byXpath("//ul[@class='catalog-grid']"));
+    private ElementsCollection pricesOfProducts = $$(byXpath("//span[@class='goods-tile__price-value']"));
 
 
-    public List<Integer> listOfProductBeforeSorting() {
+    public ListingPage sortProductsAscendingByPrice() {
         listOfProducts.shouldBe(visible);
         $(byXpath("//select[contains(@class,'select-css')]")).selectOptionByValue("1: cheap");
-
-        for (int i = 0; i < prices.size(); i++) {
-            listBeforeSorting.add(Integer.parseInt(prices.get(i).getText()));
-        }
-     return listBeforeSorting;
+        System.out.println("Select 'Ascending by prices' sorting");
+        return this;
     }
 
-    public List<Integer> listOfProductsAfterSorting(){
-        List<Integer> listAfterSorting = new ArrayList<>(listBeforeSorting);
-        Collections.sort(listAfterSorting);
-        return listAfterSorting;
+    public List<Double> getProductsPricesList() {
+        listOfProducts.shouldBe(visible);
+        List<Double> prices = new ArrayList<>();
+        for (int i = 0; i < pricesOfProducts.size(); i++) {
+            prices.add(Double.parseDouble(pricesOfProducts.get(i).getText()));
+        }
+        return prices;
     }
 }

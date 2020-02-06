@@ -9,9 +9,9 @@ import static com.codeborne.selenide.Selenide.*;
 public class TvAndMobilePage {
     private SelenideElement titleOfPage = $(byXpath("//h1[@class='portal__heading']"));
 
-    public MobilePage selectMobile(String title){
+    public MobilePage selectMobile(String title) {
         titleOfPage.shouldBe(visible);
-        $(byXpath("//a[contains(@class,'tile-cats__heading') and contains(text(),'"+title+"')]")).click();
+        $(byXpath("//a[contains(@class,'tile-cats__heading') and contains(text(),'" + title + "')]")).click();
         System.out.println("Choice 'Smartphones and portable devices' category");
 
         return page(MobilePage.class);
