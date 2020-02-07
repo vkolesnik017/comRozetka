@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class Rozetka {
-    @BeforeTest
+    @BeforeClass
     public void setUp() {
         Configuration.timeout = 6000;
         Configuration.startMaximized = true;
