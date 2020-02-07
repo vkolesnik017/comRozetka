@@ -18,7 +18,6 @@ public class Rozetka {
     public void setUp() {
         Configuration.timeout = 6000;
         Configuration.startMaximized = true;
-        Configuration.holdBrowserOpen = true;
     }
 
     @Test
