@@ -2,6 +2,8 @@ package com.vitaly.org;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ListingPage {
+    protected static final Logger LOGGER = LoggerFactory.getLogger(ListingPage.class);
     private SelenideElement listOfProducts = $(byXpath("//ul[@class='catalog-grid']"));
     private ElementsCollection pricesOfProducts = $$(byXpath("//span[@class='goods-tile__price-value']"));
 
@@ -20,7 +23,7 @@ public class ListingPage {
     public ListingPage sortProductsAscendingByPrice() {
         listOfProducts.shouldBe(visible);
         $(byXpath("//select[contains(@class,'select-css')]")).selectOptionByValue("1: cheap");
-        System.out.println("Select 'Ascending by prices' sorting");
+        LOGGER.info("Select 'Ascending by prices' sorting");
         return this;
     }
 
