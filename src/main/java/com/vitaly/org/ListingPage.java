@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -18,6 +18,7 @@ public class ListingPage {
     protected static final Logger LOGGER = LoggerFactory.getLogger(ListingPage.class);
     private SelenideElement listOfProducts = $(byXpath("//ul[@class='catalog-grid']"));
     private ElementsCollection pricesOfProducts = $$(byXpath("//span[@class='goods-tile__price-value']"));
+    private SelenideElement paginatorPage = $(byXpath("//a[@class='pagination__link pagination__link_state_active']"));
 
 
     public ListingPage sortProductsAscendingByPrice() {
@@ -28,7 +29,7 @@ public class ListingPage {
     }
 
     public List<Double> getProductsPricesList() {
-        listOfProducts.shouldBe(visible);
+        paginatorPage.shouldHave(text("1"));
         List<Double> prices = new ArrayList<>();
         for (int i = 0; i < pricesOfProducts.size(); i++) {
             prices.add(Double.parseDouble(pricesOfProducts.get(i).getText()));

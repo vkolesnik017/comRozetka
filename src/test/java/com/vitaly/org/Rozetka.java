@@ -21,7 +21,8 @@ public class Rozetka {
     @BeforeClass
     public void setUp() {
         Configuration.timeout = 6000;
-        // Configuration.startMaximized = true;
+        Configuration.startMaximized = true;
+
     }
 
     @Test
@@ -36,7 +37,6 @@ public class Rozetka {
         List<Double> pricesAfterSorting = sortprice.sortProductsAscendingByPrice().getProductsPricesList();
         LOGGER.info("Checking prices sorting");
         Assert.assertEquals(pricesAfterSorting, getExpectedSortedPrices(pricesAfterSorting));
-
     }
 
     private List<Double> getExpectedSortedPrices(List<Double> pricesList) {
