@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class Rozetka {
 
     }
 
-    @Test
+   @Test
     public void mainMethod() {
         MainPage page = open("https://rozetka.com.ua/", MainPage.class);
         TvAndMobilePage tvPage = page.selectCategory("Смартфоны, ТВ и электроника");
