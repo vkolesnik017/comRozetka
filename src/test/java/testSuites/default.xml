@@ -3,7 +3,7 @@
 <suite name="Rozetka" data-provider-thread-count="1">
     <test name="RozetkaSortingCheck" >
         <classes>
-            <class name = "com.vitaly.org.Rozetka"/>
+          <!--  <class name = "com.vitaly.org.Rozetka"/>  -->
                 <class name="com.vitaly.org.PriceSorting">
             </class>
         </classes>
