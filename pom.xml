@@ -30,8 +30,8 @@
                      <properties>
                     </properties>
                     <suiteXmlFiles>
-                      <suiteXmlFile>${basedir}${TEST_SUITE}.xml</suiteXmlFile>
-                        <!--    <suiteXmlFile>${basedir}/src/test/java/testSuites/default.xml</suiteXmlFile>-->
+                        <!--    <suiteXmlFile>${basedir}${TEST_SUITE}.xml</suiteXmlFile> -->
+                              <suiteXmlFile>${basedir}/src/test/java/testSuites/default.xml</suiteXmlFile>
                       </suiteXmlFiles>
                       <includes>
                       </includes>
