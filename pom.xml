@@ -30,23 +30,23 @@
                      <properties>
                     </properties>
                     <suiteXmlFiles>
-                  <!--      <suiteXmlFile>${basedir}${TEST_SUITE}.xml</suiteXmlFile>  -->
-                        <suiteXmlFile>${basedir}/src/test/java/testSuites/default.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <includes>
-                    </includes>
-                    <excludes>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+                      <suiteXmlFile>${basedir}${TEST_SUITE}.xml</suiteXmlFile>
+                        <!--    <suiteXmlFile>${basedir}/src/test/java/testSuites/default.xml</suiteXmlFile>-->
+                      </suiteXmlFiles>
+                      <includes>
+                      </includes>
+                      <excludes>
+                      </excludes>
+                  </configuration>
+              </plugin>
+          </plugins>
+      </build>
 
 
 
-    <dependencies>
+      <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+          <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
