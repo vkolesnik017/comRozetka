@@ -1,5 +1,3 @@
-package com.vitaly.org;
-
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
