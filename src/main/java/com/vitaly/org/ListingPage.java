@@ -2,6 +2,7 @@ package com.vitaly.org;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -20,7 +21,7 @@ public class ListingPage {
     private ElementsCollection pricesOfProducts = $$(byXpath("//span[@class='goods-tile__price-value']"));
     private SelenideElement paginatorPage = $(byXpath("//a[@class='pagination__link pagination__link_state_active']"));
 
-
+    @Step("Sorting price")
     public ListingPage sortProductsAscendingByPrice() {
         listOfProducts.shouldBe(visible);
         $(byXpath("//select[contains(@class,'select-css')]")).selectOptionByValue("1: cheap");

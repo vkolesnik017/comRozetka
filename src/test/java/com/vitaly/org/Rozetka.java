@@ -1,12 +1,14 @@
 package com.vitaly.org;
 
 import com.codeborne.selenide.Configuration;
+import com.sun.org.glassfish.gmbal.Description;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
-
+import io.qameta.allure.Flaky;
+import io.qameta.allure.Owner;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,6 +29,9 @@ public class Rozetka {
     }
 
    @Test
+   @Flaky
+   @Owner(value = "Kolesnik")
+   @Description(value = "Test checks transition by click on image of logo brand")
     public void mainMethod() {
         MainPage page = open("https://rozetka.com.ua/", MainPage.class);
         TvAndMobilePage tvPage = page.selectCategory("Смартфоны, ТВ и электроника");

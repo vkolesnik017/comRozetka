@@ -1,6 +1,7 @@
 package com.vitaly.org;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class MobilePage {
     protected static final Logger LOGGER = LoggerFactory.getLogger(MobilePage.class);
     private SelenideElement catalog = $(byXpath("//div[@class='layout']"));
-
+    @Step("Select mobile category")
     public MobileCatalogPage selectCategory(String title) {
         catalog.shouldBe(visible);
         $(byXpath("//span[@class='portal-navigation__link-text' and contains(text(),'" + title + "')]")).click();

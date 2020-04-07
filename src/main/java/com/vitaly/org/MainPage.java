@@ -1,6 +1,7 @@
 package com.vitaly.org;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +16,7 @@ public class MainPage {
     private SelenideElement hiddenMenu = $(byXpath("//div[@class='menu-wrapper display-block menu-wrapper_state_animated']"));
     private SelenideElement catalogOfProducts = $(byXpath("//button[@class='menu-toggler']"));
 
+    @Step("Select category ")
     public TvAndMobilePage selectCategory(String nameOfCategory) {
         LOGGER.info("Opening main page of rozetka");
         allCategories.shouldBe(visible);
