@@ -15,7 +15,7 @@ public class MobilePage {
     @Step("Select mobile category")
     public MobileCatalogPage selectCategory(String title) {
         catalog.shouldBe(visible);
-        $(byXpath("//span[@class='portal-navigation__link-text' and contains(text(),'" + title + "')]")).click();
+        $(byXpath("//li[@class='portal-navigation__item'][1]")).click();
         LOGGER.info("Select 'Mobile phones' category ");
         return page(MobileCatalogPage.class);
 
