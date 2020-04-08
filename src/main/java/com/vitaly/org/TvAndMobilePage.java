@@ -16,7 +16,7 @@ public class TvAndMobilePage {
       @Step("Select mobile type")
     public MobilePage selectMobile(String title) {
         titleOfPage.shouldBe(visible);
-        $(byXpath("//a[contains(@class,'tile-cats__heading') and contains(text(),'" + title + "')]")).click();
+        $(byXpath("//li[@class='portal-grid__cell'][1]")).click();
         LOGGER.info("Choice 'Smartphones and portable devices' category");
 
         return page(MobilePage.class);

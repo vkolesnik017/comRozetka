@@ -20,7 +20,7 @@ public class MainPage {
     public TvAndMobilePage selectCategory(String nameOfCategory) {
         LOGGER.info("Opening main page of rozetka");
         allCategories.shouldBe(visible);
-        $(byXpath("//a[@class='menu-categories__link' and contains(text(),'" + nameOfCategory + "')]")).click();
+        $(byXpath("//ul[@class='menu-categories menu-categories_type_main']/li[2]")).click();
         $(byXpath("//div[@class='header-bottomline']")).click();
         LOGGER.info("Selection of 'Smartphones, TVs and Electronics' categories");
         return page(TvAndMobilePage.class);

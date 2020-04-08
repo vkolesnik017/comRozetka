@@ -3,7 +3,7 @@
 <suite name="Rozetka" parallel="methods" thread-count="3"  data-provider-thread-count="1">
     <test name="RozetkaSortingCheck" >
         <classes>
-            <class name = "Rozetka"/>  
+            <class name = "Rozetka"/>
                 <class name="PriceSorting">
             </class>
         </classes>
