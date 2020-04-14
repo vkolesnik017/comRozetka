@@ -30,7 +30,7 @@ public class Rozetka {
  //  @Description(value = "Test checks transition by click on image of logo brand")
     public void mainMethod() {
         MainPage page = open("https://rozetka.com.ua/", MainPage.class);
-        TvAndMobilePage tvPage = page.selectCategory("Смартфоны, ТВ и электроника");
+       /* TvAndMobilePage tvPage = page.selectCategory("Смартфоны, ТВ и электроника");
         MobilePage mobPage = tvPage.selectMobile("Смартфоны и портативная техника");
         MobileCatalogPage catalogpage = mobPage.selectCategory("Мобильные телефоны");
         Map<String, String> productsMap = catalogpage.selectTopProducts("Топ продаж", 3);
@@ -38,7 +38,7 @@ public class Rozetka {
         ListingPage sortprice = new ListingPage();
         List<Double> pricesAfterSorting = sortprice.sortProductsAscendingByPrice().getProductsPricesList();
     //    LOGGER.info("Checking prices sorting");
-        Assert.assertEquals(pricesAfterSorting, getExpectedSortedPrices(pricesAfterSorting));
+        Assert.assertEquals(pricesAfterSorting, getExpectedSortedPrices(pricesAfterSorting));*/
     }
 
     private List<Double> getExpectedSortedPrices(List<Double> pricesList) {
