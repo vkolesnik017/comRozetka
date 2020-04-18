@@ -4,7 +4,8 @@
     <test name="RozetkaSortingCheck">
         <classes>
             <class name="PKwLogin"/>
-            <class name="PriceSorting">
+            <class name="PriceSorting"/>
+            <class name="Rozetka">
             </class>
         </classes>
     </test>
